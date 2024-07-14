@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,8 +16,8 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
+} */
+/* 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,10 +26,329 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+/* 
+.login-bg{
+  background: url(../assets/images//login.png);
+  background-size: cover;
+} */
+
+body{
+  font-family: Rubik; 
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.inputs:-webkit-autofill,
+.inputs:-webkit-autofill:hover,
+.inputs:-webkit-autofill:focus,
+.inputs:-webkit-autofill:active {
+  background: none !important;
+}
+
+input{
+  border: none;
+  outline: none
+}
+
+input:hover{
+  border: none;
+  outline: none;
+}
+
+input:focus{
+  border: none;
+  outline: none;
+}
+
+.container {
+  @apply w-[90%] mx-auto
+}
+
+.l-container {
+  @apply w-[90%] mx-auto max-w-[1200px]
+}
+
+.dash-container {
+  @apply w-[94%] max-2xl:mx-auto max-w-[1400px] 2xl:ml-20
+}
+
+.input-wrap {
+  @apply w-full flex flex-col items-start gap-2 relative
+}
+
+.labels {
+  @apply text-[11px] 2xl:text-xs font-[400] text-head
+}
+
+.labelsFade {
+  @apply text-[11px] 2xl:text-[13px] font-[400] text-greytxt
+}
+
+.inputs {
+  @apply text-xs 2xl:text-sm rounded w-full border border-border bg-none p-2 py-[10px] focus:outline-none focus:border-[1px] focus:border-primary1 invalid:border-[1px] invalid:border-error2 autofill:bg-none
+}
+
+.inputsfade {
+  @apply text-xs 2xl:text-sm rounded w-full border-[1px] text-appBlack border-inputBorder bg-inputBg p-4 py-[14px] focus:outline-none focus:border-[1px] focus:border-someBorderGray autofill:bg-none
+}
+
+.password-input {
+  @apply w-full relative
+}
+
+.buttons {
+  @apply w-full bg-primary text-white p-[14px] rounded mt-[1rem] disabled:bg-someGray transition duration-200 hover:-translate-y-[4px] active:-translate-y-[2px]
+}
+
+.buttons-line {
+  @apply bg-none border-primary border text-primary p-[14px] rounded disabled:border-someGray transition duration-200 hover:-translate-y-[4px] active:-translate-y-[2px]
+}
+
+.buttons-2 {
+  @apply bg-primary text-white p-[14px] rounded mt-[0rem] disabled:bg-someGray transition duration-200 hover:-translate-y-[4px] active:-translate-y-[2px]
+}
+
+.buttons-2-inv {
+  @apply bg-white text-primary2 p-[14px] rounded mt-[0rem] disabled:bg-someGray transition duration-200 hover:-translate-y-[4px] active:-translate-y-[2px]
+}
+
+.hovers {
+  @apply hover:bg-sidebarTxtHover active:bg-sidebarTxtActive transition duration-200 cursor-pointer
+}
+
+.hoverActive{
+  @apply transition duration-200 hover:-translate-y-[4px] active:-translate-y-[2px]
+}
+
+.hovers-text {
+  @apply hover:text-sidebarTxtHover active:text-sidebarTxtActive transition duration-200 cursor-pointer
+}
+
+.outchat {
+  width: fit-content;
+  background: #BEF6FE;
+  border-radius: 0px 16px 16px 16px;
+  padding: 10px;
+}
+
+.mechat {
+  width: fit-content;
+  background: #161C51;
+  border-radius: 16px 0px 16px 16px;
+  padding: 10px;
+  
+}
+
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.scroll-x {
+  overflow-x: scroll;
+}
+
+
+.scroll-chat {
+  overflow-y: scroll;
+}
+
+.scroll-chat::-webkit-scrollbar {
+  width: 8px
+}
+
+.scroll-chat::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 9999px;
+}
+
+.scroll-2 {
+  overflow-y: scroll;
+}
+
+.scroll-2::-webkit-scrollbar {
+  width: 2px
+}
+
+.scroll-2::-webkit-scrollbar-thumb {
+  background: #161C51;
+}
+
+.slim-scroll {
+  overflow-y: scroll;
+}
+
+.slim-scroll::-webkit-scrollbar {
+  width: 2px;
+  display: none;
+}
+
+.slim-scroll::-webkit-scrollbar-thumb {
+  background: #00692B;
+}
+
+.prompt-bg-open {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn .5s ease-in-out
+}
+
+.prompt-bg-close {
+  display: none;
+}
+
+.sidebar-bg {
+  background: url(../assets/images/sidebar.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media(max-width: 1500px) {
+  .sidebar-bg {
+    background-image: url(../assets/images/sidebarsm.png);
+    /* background: orange; */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.card-open {
+  width: 30%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  animation: dropIn .5s ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-close {
+  width: 30%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  animation: dropIn .5s ease-in-out;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swipe-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  animation: text-swipe .3s ease-in-out;
+}
+
+.spinning-logo {
+  width: 100%;
+  animation: logo-spin 6s linear infinite;
+}
+
+.next-video-container {
+  margin: 0px !important
+}
+
+.slide-up {
+  transform: translateY(0px);
+  animation: slide .4s ease-in-out;
+}
+
+.gridd {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.modal-bg-open {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 99999999999999999999999999999999;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn .5s ease-in-out
+}
+
+.modal-bg-close {
+  display: none;
+}
+
+@media(min-width: 1500px) {
+
+  .gridd {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dropIn {
+  from {
+    top: 0%
+  }
+
+  to {
+    top: 50%
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(359deg);
+  }
+}
+
+@keyframes text-swipe {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: transLateX(100%);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(20px);
+    opacity: 0
+  }
+
+  to {
+    transform: transLateY(0px);
+    opacity: 1
   }
 }
