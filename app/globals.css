@@ -84,6 +84,10 @@ input:focus{
   @apply text-[11px] 2xl:text-[13px] font-[400] text-greytxt
 }
 
+.table-header {
+  @apply py-[16px] flex flex-1 text-greytxt font-normal text-[13px] 2xl:text-sm 
+}
+
 .inputs {
   @apply text-xs 2xl:text-sm rounded w-full border border-border bg-none p-2 py-[10px] focus:outline-none focus:border-[1px] focus:border-primary1 invalid:border-[1px] invalid:border-error2 autofill:bg-none
 }

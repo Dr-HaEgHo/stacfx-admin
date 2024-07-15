@@ -17,6 +17,7 @@ const config: Config = {
         primary: "#2A66AE",
         primarytxt: "#3667A3",
         primaryLight:"#D3E7FF",
+        primaryLightRGB:"rgba(42, 102, 174, 0.12)",
         orangeLight: "#FFF0EA", 
         primary2: "#161C51",
         primary10: "rgba(0, 105, 43, 0.1)",
@@ -28,6 +29,7 @@ const config: Config = {
         blueChatHighlight: "#E9F3FF",
         blueChatHighlightHover: "#F5FAFF",
         blueChatHighlightActive: "#E9F3FF",
+        email:"#4D4D4D",
 
         appBlack:"#212121",
 
@@ -103,7 +105,7 @@ const config: Config = {
         someDarkGray: "#201919",
         sidebarEdge: "#697586",
         sidebarDiv: "#E3E8EF",
-        dashboardBg: "#F5F7F9",
+        dashboardBg: "#F7F7F7",
         noteIconBtn: "#FAFAFA",
         smallHeadTxt: "#667085",
         bigHeadTxt: "#101828",

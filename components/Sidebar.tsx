@@ -27,10 +27,9 @@ const Sidebar = () => {
     
 
     const sidebarLinks = [
-        { id: 1, image:require('../assets/icons/onboarding.png'), title: "Onboarding", route: "/dashboard/onboarding" },
         { id: 2, image:require('../assets/icons/dash.png'), title: "Dashboard", route: "/dashboard", subRoutes: "/dashboard/incubatees/new-incubatee", subRoutes1: `/dashboard/incubatees/${param?.id}` },
-        { id: 3, image:require('../assets/icons/profile.png'), title: "Profile", route: "/dashboard/profile", subRoutes1: `/dashboard/users/${param?.id}` },
         { id: 4, image:require('../assets/icons/courses.png'), title: "Courses", route: "/dashboard/courses", subRoutes1: `/dashboard/users/${param?.id}` },
+        { id: 3, image:require('../assets/icons/profile.png'), title: "Students", route: "/dashboard/students,", subRoutes1: `/dashboard/users/${param?.id}` },
         { id: 5, image:require('../assets/icons/chat.png'), title: "Stac Hub", route: "/dashboard/chat", subRoutes1: `/dashboard/users/${param?.id}` },
         // { id: 6, image:require('../assets/icons/chat.png'), title: "Templates & Downloads", route: "/dashboard/downloads", subRoutes1: `/dashboard/users/${param?.id}` },
         { id: 7, image:require('../assets/icons/settings.png'), title: "Settings", route: "/dashboard/settings", subRoutes1: `/dashboard/settings/${param?.id}` },
@@ -111,8 +110,6 @@ const Sidebar = () => {
 
                 {/* LINKS SECTION */}
                 <div className="w-full ">   
-
-
 
                     {/* MAIN LINKS */}
 

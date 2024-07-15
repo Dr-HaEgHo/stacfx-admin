@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <div className='w-full bg-white border-b-[1px] border-border py-[7px]' >
             <div className="dash-container">
-                <div className="w-full flex items-center justify-between xl:max-w-[1200px]">
+                <div className="w-full flex items-center justify-between ">
 
 
                     {/* LEFT */}

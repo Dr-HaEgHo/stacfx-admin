@@ -12,7 +12,7 @@ import {
 import CardLoader from "../CardLoader";
 import SomethingWentWrong from "../SomethingWentWrong";
 import { CourseProps, courseData } from "@/types";
-import { GlobalContext } from "@/context/context";
+import { GlobalContext } from "@/context/Context";
 
 const latest = [
   {
