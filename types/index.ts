@@ -178,10 +178,23 @@ interface result {
   phone: string;
   status: string;
 }
+interface annResult {
+  id: number;
+  title: string;
+  message: string;
+  date: string;
+}
 
 export interface TableProps {
   data: {
     results: result[];
+  };
+  loading: boolean;
+}
+
+export interface AnnouncementTableProps {
+  data: {
+    results: annResult[];
   };
   loading: boolean;
 }

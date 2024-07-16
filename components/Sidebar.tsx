@@ -29,7 +29,8 @@ const Sidebar = () => {
     const sidebarLinks = [
         { id: 2, image:require('../assets/icons/dash.png'), title: "Dashboard", route: "/dashboard", subRoutes: "/dashboard/incubatees/new-incubatee", subRoutes1: `/dashboard/incubatees/${param?.id}` },
         { id: 4, image:require('../assets/icons/courses.png'), title: "Courses", route: "/dashboard/courses", subRoutes1: `/dashboard/users/${param?.id}` },
-        { id: 3, image:require('../assets/icons/profile.png'), title: "Students", route: "/dashboard/students,", subRoutes1: `/dashboard/users/${param?.id}` },
+        { id: 3, image:require('../assets/icons/Users_Group2.svg'), title: "Students", route: "/dashboard/students", subRoutes1: `/dashboard/users/${param?.id}` },
+        { id: 3, image:require('../assets/icons/profile.png'), title: "Announcements", route: "/dashboard/announcements", subRoutes1: `/dashboard`},
         { id: 5, image:require('../assets/icons/chat.png'), title: "Stac Hub", route: "/dashboard/chat", subRoutes1: `/dashboard/users/${param?.id}` },
         // { id: 6, image:require('../assets/icons/chat.png'), title: "Templates & Downloads", route: "/dashboard/downloads", subRoutes1: `/dashboard/users/${param?.id}` },
         { id: 7, image:require('../assets/icons/settings.png'), title: "Settings", route: "/dashboard/settings", subRoutes1: `/dashboard/settings/${param?.id}` },
@@ -63,24 +64,6 @@ const Sidebar = () => {
                 <div className='w-full lg:hidden flex items-center justify-center pt-10 z-[999999999999999999999999]'>
                     <CloseCircle onClick={toggleSidebar} size="30" className="text-white hoverActive" variant='Bulk'/>
                 </div>
-                {/* <Prompt
-                    title='Are you sure you want to logout ?'
-                    subtitle='You can always log back in at any time'
-                    action={handleLogout}
-                    action2={handleCancel}
-                    btn1='Logout'
-                    btn2='Cancel'
-                    isOpen={logoutOpen}
-                    setIsOpen={setLogoutOpen}
-                /> */}
-
-                {/* <div className='fixed -bottom-[80px] -right-[100px] w-[283px] h-auto 2xl:w-[303px] 2xl:h-[349px] ' >
-                    <Image 
-                        src={require('../assets/images/logomark.png')}
-                        alt='stacfx.com'
-                        className='w-full'
-                    />
-                </div> */}
 
                 {/* TOP  */}
                 <div className="w-full py-6  2xl:py-10  flex flex-col items-center justify-center">

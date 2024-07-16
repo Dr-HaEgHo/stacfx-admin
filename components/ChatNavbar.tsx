@@ -1,5 +1,5 @@
 'use client'
-import { GlobalContext } from '@/context/context'
+import { GlobalContext } from '@/context/Context'
 import { ArrowCircleRight } from 'iconsax-react'
 import Image from 'next/image'
 import React, { useContext } from 'react'

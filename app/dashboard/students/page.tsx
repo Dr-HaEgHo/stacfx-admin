@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 const res = [
   {id: 1, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Active", },
   {id: 2, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Active", },
-  {id: 3, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Active", },
+  {id: 3, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Inactive", },
   {id: 4, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Active", },
   {id: 5, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Active", },
   {id: 6, name: "Peter Daniel", email:"peterdaniel@gmail.com", phone: "+23412345678", status: "Active", },
@@ -20,9 +20,6 @@ const page = () => {
 
   const router = useRouter()
   const dispatch = useAppDispatch()
-  const userDetails = useAppSelector(state => state.auth.userDetails)
-  const latest = useAppSelector((state) => state.courses.latestCourses);
-  const ongoing = useAppSelector((state) => state.courses.ongoingCourses);
   const isLatestLoading = useAppSelector(state => state.courses.latestLoading)
   const isOngoingLoading = useAppSelector(state => state.courses.ongoingLoading)
 
@@ -55,35 +52,29 @@ const page = () => {
           
           {/* WECLOME TEXT TOP */}
           <div className="w-full ">
-            <h1 className="text-xl text-headDesc font-semibold">Hello Peter, welcome back</h1>
-            <p className="text-sm text-greytxt font-normal">Keep track of your company's progress</p>
+            <h1 className="text-xl text-headDesc font-[400]">Students</h1>
           </div>
 
           {/* ANALYTICS SECTION COUNTS */}
           <div className="w-full grid grid-cols-3 gap-4 mt-6">
             {/* Analytics Cards mapped Grid container */}
             <div className="rounded-lg grid grid-cols-2 col-span-2 gap-6">
-              <AnalyticCard count={467} label="Total Students" icon={require('../../assets/icons/Users_Group.svg')} to="" />
-              <AnalyticCard count={325} label="Active Students" icon={require('../../assets/icons/Users_Group.svg')} to="" />
-              <AnalyticCard count={78} label="Total Courses" icon={require('../../assets/icons/Book_Open.svg')} to="" />
-              <AnalyticCard count={69} label="Active Courses" icon={require('../../assets/icons/Book_Open.svg')} to="" />
+              <AnalyticCard count={467} label="Total Students" icon={require('../../../assets/icons/Users_Group.svg')} to="" />
+              <AnalyticCard count={325} label="Active Students" icon={require('../../../assets/icons/Users_Group.svg')} to="" />
             </div>
 
             {/* Card showing the chart */}
-            <div className="">
+            {/* <div className="">
               <ChartCard/>
-            </div>
+            </div> */}
           </div>
 
 
           {/* STUDENT MANAGEMENT TEXT TOP */}
-          <div className="my-6">
-            <h2 className="text-headDesc text-xl font-semibold">Student Management</h2>
-            <p className="text-sm text-greytxt font-normal">Manage user activities</p>
-          </div>
+          
 
           {/* TABLE SHOWING STUDENT DATA */}
-          <div className="w-full">
+          <div className="w-full mt-12">
             <Table data={{ results: res}} loading={false}/>
           </div>
 

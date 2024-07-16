@@ -3,13 +3,13 @@ import { useRouter } from 'next/navigation';
 import React, { FC, useEffect, useState } from 'react'
 import TableShimmerLoader from './TableShimmerLoader';
 import EmptyTable from './EmptyTable';
-import { TableProps } from '@/types';
+import { AnnouncementTableProps, TableProps } from '@/types';
 import Image from 'next/image';
 import { More } from 'iconsax-react';
 // import moment from 'moment';
 
 
-const Table:FC<TableProps> = ({ data, loading }) => {
+const AnnouncementTable:FC<AnnouncementTableProps> = ({ data, loading }) => {
 
     const [sortedResults, setSortedResults] = useState([] as any)
     const [domLoaded, setDomLoaded] = useState(false);
@@ -36,26 +36,20 @@ const Table:FC<TableProps> = ({ data, loading }) => {
 
     return (<>
         {
-            domLoaded && (<div className='w-full bg-white rounded-lg'>
+            domLoaded && (<div className='w-full bg-white'>
                 <table className='w-full'>
-                    <thead className='w-full border-b border-tableStroke p-[18px] '>
+                    <thead className='w-full bg-dashboardBg border-tableStroke p-[22px] pb-5 '>
                         <tr className='w-full flex items-center px-2 justify-between'>
-                            <th>
-
+                            <th className='table-header-1' >
+                                Title
                             </th>
-                            <th className='table-header' >
-                                Name
+                            <th className='table-header-1 !flex-[2]' >
+                                Message
                             </th>
-                            <th className='table-header' >
-                                Email
+                            <th className='table-header-1' >
+                                Date
                             </th>
-                            <th className='table-header' >
-                                Phone Number
-                            </th>
-                            <th className='table-header justify-center' >
-                                Status
-                            </th>
-                            <th className='table-header justify-center' >
+                            <th className='table-header-1 justify-center' >
                                 Action
                             </th>
                         </tr>
@@ -70,23 +64,15 @@ const Table:FC<TableProps> = ({ data, loading }) => {
                                     data && data.results ? data.results.map((item: any) => (
                                         <tr onClick={() => {
                                             router.push(`/dashboard/incubatees/${item?.id}`)
-                                        }} key={item.id} className='w-full flex items-center px-2 justify-between hover:bg-sidebarTxtHover active:bg-sidebarTxtActive transition duration-200 cursor-pointer'>
+                                        }} key={item.id} className='w-full flex items-center px-2 justify-between border-b border-tableStroke hover:bg-sidebarTxtHover active:bg-sidebarTxtActive transition duration-200 cursor-pointer'>
                                             <td className='py-3 flex flex-1 gap-2 items-center text-black font-[400] text-xs 2xl:text-[15px]'>
-                                                <Image
-                                                    src={require('../assets/images/avatar2.png')}
-                                                    alt="student thumbnail"
-                                                    className='w-10 h-10 founded-full overflow-hidden'
-                                                />
-                                                {item.name}
+                                                {item.title}
                                             </td>
                                             <td className='py-3 flex flex-1 text-email font-normal text-sx 2xl:text-[15px]'>
-                                                {item.email}
+                                                {item.message}
                                             </td>
                                             <td className='py-3 flex flex-1 text-email font-normal text-sx 2xl:text-[15px]'>
-                                                {item.phone}
-                                            </td>
-                                            <td className={`flex flex-[1] justify-center  `}>
-                                                <span className={`flex items-center justify-center w-[107px] py-1 rounded-full text-primary2 text-xs 2xl:text-sm   ${item.status === 'Active' ? 'bg-primaryLightRGB' : 'bg-primaryLightRGB'}`} >{item.status}</span>
+                                                {item.date}
                                             </td>
                                             <td className='py-3 flex flex-1 justify-center flex-col items-center'>
                                                 {/* <p className='text-head text-xs 2xl:text-sm ' >{moment(item.created_at).format("Do, MMM YYYY")}</p> */}
@@ -105,4 +91,4 @@ const Table:FC<TableProps> = ({ data, loading }) => {
         }
     </>)
 }
-export default Table;
+export default AnnouncementTable;

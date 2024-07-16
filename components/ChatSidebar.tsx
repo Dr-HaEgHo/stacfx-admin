@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React, { useContext, useState } from 'react';
 import { useParams, usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { GlobalContext } from '@/context/context';
+import { GlobalContext } from '@/context/Context';
 // import { useGlobalContext } from '@/context/context';
 // import Prompt from './Prompt';/
 // import { useAppDispatch } from '@/store/hooks';
